@@ -1,0 +1,7 @@
+form >.row{
+    display: block !important;
+}
+
+form > .row > .col-sm-6 > .form-floating > input{
+    width: 300px !important;
+}
