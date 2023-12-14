@@ -1,0 +1,46 @@
+<div id="wrapper">
+    <app-side-bar></app-side-bar>
+    <div id="content-wrapper" class="d-flex flex-column">
+        <div id="content">
+            <app-top-bar></app-top-bar>
+
+
+            <div class="container-fluid">
+                <h2>Create New Admin</h2>
+                <form #Myform="ngForm" (ngSubmit)="AddAmount(this.loanAmount.LoanData)">
+                    <div class="mb-3">
+                        <input type="hidden" class="form-control" id="Id" name="Id" #Id="ngModel"
+                            [(ngModel)]="this.loanAmount.LoanData.amountId">
+                    </div>
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="name" name="amount" #amount="ngModel"
+                            [(ngModel)]="this.loanAmount.LoanData.amountValue" required>
+                        <div *ngIf="amount.invalid && (amount.dirty || amount.touched)" class="text-danger">
+                            Amount is Required
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="name" name="PA" #PA="ngModel"
+                            [(ngModel)]="this.loanAmount.LoanData.amountPremium" required>
+                        <div *ngIf="PA.invalid && (PA.dirty || PA.touched)" class="text-danger">
+                            Amount is Required
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+
+                <a href="/AddLoanAmount" class="btn btn-danger">Add More Amounts</a>
+
+
+
+
+            </div>
+
+
+
+        </div>
+    </div>
+</div>

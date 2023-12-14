@@ -14,31 +14,33 @@
             </div>
             <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
                 <div class="bg-white rounded p-5">
-                    <form>
+                    <form #MyForm="ngForm" (ngSubmit)="LoginUser(MyForm.value)">
                         <div class="row g-3">
                             <div class="col-sm-6">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control" id="gname" placeholder="Gurdian Name">
+                                    <input type="text" class="form-control" name="name" id="gname" [(ngModel)]="LoginService.loginData.Name" required>
                                     <label for="gname">Your Email</label>
                                 </div>
                             </div>
                             
                             <div class="col-sm-6">
                                 <div class="form-floating">
-                                    <input type="email" class="form-control" id="gmail" placeholder="Gurdian Email">
+                                    <input type="password" class="form-control" name="password" id="gmail" [(ngModel)]="LoginService.loginData.Password" required>
                                     <label for="gmail">Your Password</label>
                                 </div>
                             </div>
-                            
                            
                             <div class="col-12">
                                 <button class="btn btn-primary py-3 px-5" type="submit">Login</button>
                             </div>
                             <br><br>
-
-                            <a href="/Sign">New Member?</a>
+                    
+                            <div class="col-12">
+                                <a href="/Sign">New Member?</a>
+                            </div>
                         </div>
                     </form>
+                    
                 </div>
             </div>
         </div>

@@ -1,8 +1,17 @@
-export class Transaction {
+
+export class Transaction{
+
     transactionID: number;
-    policyID: number;
+    cardNumber: string | null;
+    expDate: string | null;
+    cvv: string | null;
+    pin: string | null;
     transactionDate: Date;
-    transactionType?: string;
-    amount: number;
-    status?: string;
+    policyName: string | null;
+    policyHolderName: string | null;
+    policyHolderPhone: string | null;
+    policyHolderEmail: string | null;
+
+
 }
+

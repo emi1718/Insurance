@@ -1,0 +1,38 @@
+<div class="container" *ngIf="PolicyHolder.PolicyHolderList && PolicyHolder.PolicyHolderList.length > 0">
+  <h2>My Policies</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Policy Type</th>
+        <th>Premium Amount</th>
+        <th>Duration</th>
+        <th>Status</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of PolicyHolder.PolicyHolderList">
+        <td>{{ item.policyHolderID }}</td>
+        <td>{{ item.policyHolderName }}</td>
+        <td>{{ item.policyName }}</td>
+        <td>{{ item.policyAmount }}</td>
+        <td>{{ item.duration }}</td>
+
+        <td *ngIf="item.status === 1" class="active">Active</td>
+        <td *ngIf="item.status === 0" class="pending">Pending</td>
+
+      
+      </tr>
+    </tbody>
+  </table>
+  <a href="#" class="btn btn-success my-2" >Apply For Loan</a>
+</div>
+
+<ng-container class="container" *ngIf="PolicyHolder.PolicyHolderList && PolicyHolder.PolicyHolderList.length === 0">
+  <div class="alert alert-info" role="alert">
+    <h4 class="alert-heading">No Policies Found!</h4>
+    <p class="mb-0">You don't have any policies. Apply for a policy today!</p>
+  </div>
+</ng-container>

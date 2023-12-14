@@ -1,0 +1,43 @@
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Policy Form</h2>
+    <form #MyForm="ngForm" (ngSubmit)="AddPolicy(policy.PolicyHolderData)">
+   
+  
+      <div class="mb-3">
+        <label for="policyType" class="form-label">Policy Type</label>
+        <select class="form-control" name="policyType" #policyType="ngModel" [(ngModel)]="policy.PolicyHolderData.policyId" required>
+          <option *ngFor="let item of policies.PolicyList" [value]="item.policyID">{{item.policyType}}</option>
+        </select>
+      </div>
+  
+      <div class="mb-3">
+        <label for="age" class="form-label">Age</label>
+        <input type="number" class="form-control" name="age" #age="ngModel" [(ngModel)]="policy.PolicyHolderData.age" required>
+        <div *ngIf="age.invalid && (age.dirty || age.touched)" class="text-danger">
+          Age is Required!
+        </div>
+      </div>
+  
+      <div class="mb-3">
+        <label for="phone" class="form-label">Phone</label>
+        <input type="tel" class="form-control" name="phone" #phone="ngModel" [(ngModel)]="policy.PolicyHolderData.policyHolderPhone"
+          required>
+        <div *ngIf="phone.invalid && (phone.dirty || phone.touched)" class="text-danger">
+          Phone is Required!
+        </div>
+      </div>
+  
+      <div class="mb-3">
+        <label for="nic" class="form-label">NIC</label>
+        <input type="text" class="form-control" name="nic" #nic="ngModel" [(ngModel)]="policy.PolicyHolderData.nic" required>
+        <div *ngIf="nic.invalid && (nic.dirty || nic.touched)" class="text-danger">
+          NIC Number is Required!
+        </div>
+      </div>
+  
+     
+  
+      <button type="submit" class="btn btn-primary">Next</button>
+    </form>
+  </div>
+  

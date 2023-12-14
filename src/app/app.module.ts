@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import {HttpClientModule} from '@angular/common/http'
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomePageComponent } from './UserComponents/Home/home-page/home-page.component';
 import { TopBarComponentComponent } from './UserComponents/Components/top-bar-component/top-bar-component.component';
-import { NavbarComponentComponent } from './UserComponents/Home/navbar-component/navbar-component.component';
+
 import { HeaderComponentComponent } from './UserComponents/Home/header-component/header-component.component';
 import { AboutComponentComponent } from './UserComponents/Components/about-component/about-component.component';
 import { FactComponentComponent } from './UserComponents/Components/fact-component/fact-component.component';
@@ -15,22 +15,20 @@ import { ContactComponentComponent } from './UserComponents/Components/contact-c
 import { ReviewComponentComponent } from './UserComponents/Components/review-component/review-component.component';
 import { FooterComponentComponent } from './UserComponents/Components/footer-component/footer-component.component';
 import { AboutPageComponent } from './UserComponents/About/about-page/about-page.component';
-import { AboutNavbarComponentComponent } from './UserComponents/About/about-navbar-component/about-navbar-component.component';
+
 import { AboutHeaderComponentComponent } from './UserComponents/About/about-header-component/about-header-component.component';
 import { ServicePageComponent } from './UserComponents/Service/service-page/service-page.component';
-import { ServiceNavbarComponentComponent } from './UserComponents/Service/service-navbar-component/service-navbar-component.component';
+
 import { ServiceHeaderComponentComponent } from './UserComponents/Service/service-header-component/service-header-component.component';
 import { InsurancePageComponent } from './UserComponents/Insurance/insurance-page/insurance-page.component';
 import { InsuranceHeaderComponentComponent } from './UserComponents/Insurance/insurance-header-component/insurance-header-component.component';
-import { InsuranceNavbarComponentComponent } from './UserComponents/Insurance/insurance-navbar-component/insurance-navbar-component.component';
+
 import { ContactPageComponent } from './UserComponents/Contact/contact-page/contact-page.component';
 import { ContactHeaderComponentComponent } from './UserComponents/Contact/contact-header-component/contact-header-component.component';
-import { ContactNavbarComponentComponent } from './UserComponents/Contact/contact-navbar-component/contact-navbar-component.component';
+
 import { LoginPageComponent } from './UserComponents/Login/login-page/login-page.component';
-import { LoginHeaderComponentComponent } from './UserComponents/Login/login-header-component/login-header-component.component';
 import { LoginComponentComponent } from './UserComponents/Login/login-component/login-component.component';
 import { SignPageComponent } from './UserComponents/Sign/sign-page/sign-page.component';
-import { SignHeaderComponentComponent } from './UserComponents/Sign/sign-header-component/sign-header-component.component';
 import { SignComponentComponent } from './UserComponents/Sign/sign-component/sign-component.component';
 import { DashboardPageComponent } from './AdminComponents/DashBoard/dashboard-page/dashboard-page.component';
 import { DashboardMainContentComponent } from './AdminComponents/DashBoard/dashboard-main-content/dashboard-main-content.component';
@@ -49,7 +47,19 @@ import { FormsModule } from '@angular/forms';
 import { AdminPageComponent } from './AdminComponents/Admin/admin-page/admin-page.component';
 import { AdminTableComponent } from './AdminComponents/Admin/admin-table/admin-table.component';
 import { AdminFormComponent } from './AdminComponents/Admin/admin-form/admin-form.component';
-
+import { CustomeInterceptor } from './Intercept/custome.interceptor';
+import { NavbarComponent } from './UserComponents/Components/navbar/navbar.component';
+import { PolicyFormComponent } from './UserComponents/PolicyForm/policy-form/policy-form.component';
+import { PolicyHeaderComponent } from './UserComponents/PolicyForm/policy-header/policy-header.component';
+import { PolicyComponentComponent } from './UserComponents/PolicyForm/policy-component/policy-component.component';
+import { TransactionFormComponent } from './UserComponents/Transaction/transaction-form/transaction-form.component';
+import { TransactionHeaderComponent } from './UserComponents/Transaction/transaction-header/transaction-header.component';
+import { TransactionPageComponent } from './UserComponents/Transaction/transaction-page/transaction-page.component';
+import { DetailPageComponent } from './UserComponents/PolicyDetail/detail-page/detail-page.component';
+import { DetailComponentComponent } from './UserComponents/PolicyDetail/detail-component/detail-component.component';
+import { LoanTableComponent } from './AdminComponents/loanAmount/loan-table/loan-table.component';
+import { LoanFormComponent } from './AdminComponents/loanAmount/loan-form/loan-form.component';
+import { ApplyPageComponent } from './UserComponents/ApplyLoan/apply-page/apply-page.component';
 
 
 
@@ -60,7 +70,7 @@ import { AdminFormComponent } from './AdminComponents/Admin/admin-form/admin-for
     AppComponent,
     HomePageComponent,
     TopBarComponentComponent,
-    NavbarComponentComponent,
+ 
     HeaderComponentComponent,
 
     AboutComponentComponent,
@@ -71,22 +81,22 @@ import { AdminFormComponent } from './AdminComponents/Admin/admin-form/admin-for
     ReviewComponentComponent,
     FooterComponentComponent,
     AboutPageComponent,
-    AboutNavbarComponentComponent,
+   
     AboutHeaderComponentComponent,
     ServicePageComponent,
-    ServiceNavbarComponentComponent,
+   
     ServiceHeaderComponentComponent,
     InsurancePageComponent,
     InsuranceHeaderComponentComponent,
-    InsuranceNavbarComponentComponent,
+   
     ContactPageComponent,
     ContactHeaderComponentComponent,
-    ContactNavbarComponentComponent,
+ 
     LoginPageComponent,
-    LoginHeaderComponentComponent,
+
     LoginComponentComponent,
     SignPageComponent,
-    SignHeaderComponentComponent,
+ 
     SignComponentComponent,
     DashboardPageComponent,
     DashboardMainContentComponent,
@@ -106,6 +116,20 @@ import { AdminFormComponent } from './AdminComponents/Admin/admin-form/admin-for
      AdminPageComponent,
      AdminTableComponent,
      AdminFormComponent,
+     NavbarComponent,
+     PolicyFormComponent,
+     PolicyHeaderComponent,
+     PolicyComponentComponent,
+     TransactionFormComponent,
+     TransactionHeaderComponent,
+     TransactionPageComponent,
+     DetailPageComponent,
+     DetailComponentComponent,
+     LoanTableComponent,
+     LoanFormComponent,
+     ApplyPageComponent,
+    
+
 
 
 
@@ -122,7 +146,9 @@ import { AdminFormComponent } from './AdminComponents/Admin/admin-form/admin-for
     HttpClientModule,
     AppRoutingModule,
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass:CustomeInterceptor, multi: true },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

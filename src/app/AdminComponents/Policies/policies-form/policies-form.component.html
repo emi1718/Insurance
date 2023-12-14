@@ -5,22 +5,52 @@
             <app-top-bar></app-top-bar>
             <div class="container-fluid">
                 <h2>Create New Policie</h2>
-                <form>
+                <form #MyForm="ngForm" (ngSubmit)="AddPolicy(PolicyService.PolicyData)">
+                    <!-- Hidden Input for Policy ID -->
+                    <input type="hidden" class="form-control" name="policyID" [(ngModel)]="PolicyService.PolicyData.policyID">
+                  
+                    <!-- Policy Name -->
                     <div class="mb-3">
-                      <label for="exampleInputEmail1" class="form-label">Policie Name</label>
-                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                      <label for="PolicyName" class="form-label">Policy Name</label>
+                      <input type="text" class="form-control" id="PolicyName" name="policyType" #PolicyName="ngModel" [(ngModel)]="PolicyService.PolicyData.policyType" required>
+                      <div *ngIf="PolicyName.invalid && (PolicyName.dirty || PolicyName.touched)" class="text-danger">
+                        Policy Name is required.
+                      </div>
                       <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
                     </div>
+                  
+                    <!-- Policy Description -->
                     <div class="mb-3">
-                      <label for="exampleInputPassword1" class="form-label">Policie Discribtion</label>
-                      <input type="text" class="form-control" id="exampleInputPassword1">
+                      <label for="PolicyDescription" class="form-label">Policy Description</label>
+                      <textarea class="form-control" id="PolicyDescription" name="coverageDetail" #PolicyDis="ngModel" [(ngModel)]="PolicyService.PolicyData.coverageDetail" cols="30" rows="10" required></textarea>
+                      <div *ngIf="PolicyDis.invalid && (PolicyDis.dirty || PolicyDis.touched)" class="text-danger">
+                        Policy Description is required.
+                      </div>
                     </div>
-                    <div class="mb-3 form-check">
-                      <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                      <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                  
+                    <!-- Premium Amount -->
+                    <div class="mb-3">
+                      <label for="PremiumAmount" class="form-label">Premium Amount</label>
+                      <input type="text" class="form-control" id="PremiumAmount" name="premiumAmount" #Amount="ngModel" [(ngModel)]="PolicyService.PolicyData.premiumAmount" required>
+                      <div *ngIf="Amount.invalid && (Amount.dirty || Amount.touched)" class="text-danger">
+                        Premium Amount is required.
+                      </div>
                     </div>
+                  
+                    <!-- Policy Duration -->
+                    <div class="mb-3">
+                      <label for="PolicyDuration" class="form-label">Policy Duration</label>
+                      <input type="text" class="form-control" id="PolicyDuration" name="duration" #Duration="ngModel" [(ngModel)]="PolicyService.PolicyData.duration" required>
+                      <div *ngIf="Duration.invalid && (Duration.dirty || Duration.touched)" class="text-danger">
+                        Policy Duration is required.
+                      </div>
+                    </div>
+                  
+                    <!-- Submit Button -->
                     <button type="submit" class="btn btn-primary">Submit</button>
                   </form>
+                  
+              
 
             </div>
         </div>

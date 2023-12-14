@@ -1,28 +1,41 @@
 <div id="wrapper">
-    <app-side-bar></app-side-bar>
-    <div id="content-wrapper" class="d-flex flex-column">   
-        <div id="content">
-            <app-top-bar></app-top-bar>
-            <div class="container-fluid">
-                <h2>Create New Admin</h2>
-                <form>
-                    <div class="mb-3">
-                      <label for="exampleInputEmail1" class="form-label">Policie Name</label>
-                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                      <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+  <app-side-bar></app-side-bar>
+  <div id="content-wrapper" class="d-flex flex-column">   
+      <div id="content">
+          <app-top-bar></app-top-bar>
+          <div class="container-fluid">
+              <h2>Create New Admin</h2>
+              <form #Myform="ngForm" (ngSubmit)="AddAdmin(this.AdminService.Data)">
+                <div class="mb-3">
+                    <input type="hidden" class="form-control" id="Id" name="Id" #Id="ngModel" [(ngModel)]="this.AdminService.Data.id">
+                </div>
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="name" name="name" #name="ngModel" [(ngModel)]="this.AdminService.Data.name" required>
+                    <div *ngIf="name.invalid && (name.dirty || name.touched)" class="text-danger">
+                        Name is Required
                     </div>
-                    <div class="mb-3">
-                      <label for="exampleInputPassword1" class="form-label">Policie Discribtion</label>
-                      <input type="text" class="form-control" id="exampleInputPassword1">
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" #email="ngModel" [(ngModel)]="this.AdminService.Data.email" required>
+                    <div *ngIf="email.invalid && (email.dirty || email.touched)" class="text-danger">
+                        Email is Required
                     </div>
-                    <div class="mb-3 form-check">
-                      <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                      <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="password" name="password" #password="ngModel" [(ngModel)]="this.AdminService.Data.password" required>
+                    <div *ngIf="password.invalid && (password.dirty || password.touched)" class="text-danger">
+                        Password is Required
                     </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                  </form>
+                </div>
+               
 
-            </div>
-        </div>
-    </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+            
+          </div>
+      </div>
+  </div>
 </div>

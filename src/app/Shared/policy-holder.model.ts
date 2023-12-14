@@ -1,10 +1,15 @@
-import { LoanFacilities } from "./loan-facilities.model";
-import { Policy } from "./policy.model";
 
 export class PolicyHolder {
     policyHolderID: number;
-    userID: number;
-    dob: string;
-    policies: Policy[];
-    loanFacilities: LoanFacilities[];
+    policyHolderName?: string;
+    policyName?: string; // NotMapped property
+    policyAmount?: string; // NotMapped property
+    duration?: string; // NotMapped property
+    policyHolderEmail?: string;
+    policyHolderPhone?: string;
+    age: number;
+    nic?: string;
+    status: number;
+    policyId: number;
+   
 }

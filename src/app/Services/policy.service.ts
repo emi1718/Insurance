@@ -35,7 +35,12 @@ export class PolicyService {
   //Delete Admin
   Delete(id: number) {
 
-    this.http.delete(`${this.PolicyUrl}/${id}`);
+    this.http.delete(`${this.PolicyUrl}/${id}`).subscribe()
+
+  }
+
+  getById(id:number):Observable<Policy[]>{
+return this.http.get<Policy[]>(`${this.PolicyUrl}/${id}`)
 
   }
 }

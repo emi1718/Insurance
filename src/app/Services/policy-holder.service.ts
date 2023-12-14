@@ -14,8 +14,13 @@ export class PolicyHolderService {
   PolicyHolderData: PolicyHolder = new PolicyHolder();
   constructor(private http: HttpClient, private route: Router) { }
 
+  getEmail(data: string): Observable<PolicyHolder[]> {
 
-  // Show Admin List
+    return this.http.get<PolicyHolder[]>(`${this.PolicyHolderUrl}/${data}`)
+
+  }
+
+  // Show  List
   Get(): Observable<PolicyHolder[]> {
     return this.http.get<PolicyHolder[]>(this.PolicyHolderUrl);
   }
