@@ -1,6 +1,10 @@
-
-
-    <!-- Page Heading -->
+<div id="wrapper">
+    <app-side-bar></app-side-bar>
+    <div id="content-wrapper" class="d-flex flex-column">   
+        <div id="content">
+            <app-top-bar></app-top-bar>
+            <div class="container-fluid">
+          <!-- Page Heading -->
     <h1 class="h3 mb-2 text-gray-800">User List</h1>
     <p class="mb-4">DataTables is a third party plugin that is used to generate the demo table below.
         For more information about DataTables, please visit the <a target="_blank"
@@ -19,17 +23,21 @@
                             <th>Id</th>
                             <th>Name</th>
                             <th>Email</th>
-                            <th>Password</th>
+                            <th>Phone</th>
+                             <th>policy Name</th>
+                             <th>status</th>
                         
                         </tr>
                     </thead>
                     <tbody>
                         
-                         <tr *ngFor="let items of UserService.List ">
-                            <td>{{items.id}}</td>
-                            <td>{{items.userName}}</td>
-                            <td>{{items.email}}</td>
-                            <td>{{items.passwordHash}}</td>
+                         <tr *ngFor="let items of Insurance.PolicyHolderList ">
+                            <td>{{items.policyHolderID}}</td>
+                            <td>{{items.policyHolderName}}</td>
+                            <td>{{items.policyHolderEmail}}</td>
+                            <td>{{items.policyHolderPhone}}</td>
+                            <td>{{items.policyName}}</td>
+                            <td>{{items.status}}</td>
                        
                         </tr> 
                    
@@ -37,10 +45,14 @@
 
                     </tbody>
                 </table>
-             <a href="/UnactiveUser" class="btn btn-danger">UnActive User</a>
+
             </div>
         </div>
     </div>
 
 
 <!-- /.container-fluid -->
+            </div>
+        </div>
+    </div>
+</div>

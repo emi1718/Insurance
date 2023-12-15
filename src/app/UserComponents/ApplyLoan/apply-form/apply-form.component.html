@@ -6,23 +6,16 @@
     <table class="table">
              <thead>
                 <th>#</th>
-                <th>Name</th>
                 <th>Amount</th>
-                <th>Monthy Payment</th>
-                <th>Status</th>
-              
+                <th>Monthly payment</th>
+                <th>Action</th>
              </thead>
 <tbody>
-    <tr *ngFor="let item of loan.LoanList">
-                 <td>{{item.loanId}}</td>
-                 <td>{{item.holderName}}</td>
-                 <td>{{item.loanType}}</td>
+    <tr *ngFor="let item of Amount.LoanList">
+                 <td>{{item.amountId}}</td>
+                 <td>{{item.amountValue}}</td>
                  <td>{{item.amountPremium}}</td>
-
-                 
-                 <td>{{item.status}}</td>
-      
-              
+                 <td><button class="btn btn-primary" (click)="AddLoan(item.amountId)">Apply</button></td>
     </tr>
 </tbody>
 

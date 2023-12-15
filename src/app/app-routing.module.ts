@@ -11,7 +11,7 @@ import { DashboardPageComponent } from './AdminComponents/DashBoard/dashboard-pa
 import { PoliciesPageComponent } from './AdminComponents/Policies/policies-page/policies-page.component';
 import { PoliciesFormComponent } from './AdminComponents/Policies/policies-form/policies-form.component';
 import { UserPageComponent } from './AdminComponents/User/user-page/user-page.component';
-import { UnActivePageComponent } from './AdminComponents/User/un-active-page/un-active-page.component';
+
 import { AdminPageComponent } from './AdminComponents/Admin/admin-page/admin-page.component';
 import { AdminFormComponent } from './AdminComponents/Admin/admin-form/admin-form.component';
 
@@ -22,6 +22,10 @@ import { TransactionPageComponent } from './UserComponents/Transaction/transacti
 import { DetailPageComponent } from './UserComponents/PolicyDetail/detail-page/detail-page.component';
 import { LoanTableComponent } from './AdminComponents/loanAmount/loan-table/loan-table.component';
 import { LoanFormComponent } from './AdminComponents/loanAmount/loan-form/loan-form.component';
+import { ApplyFormComponent } from './UserComponents/ApplyLoan/apply-form/apply-form.component';
+import { ApplyPageComponent } from './UserComponents/ApplyLoan/apply-page/apply-page.component';
+import { InsuranceListComponent } from './AdminComponents/Insurance/insurance-list/insurance-list.component';
+import { LoanListComponent } from './AdminComponents/Loan/loan-list/loan-list.component';
 
 
 const routes: Routes = [
@@ -35,16 +39,20 @@ const routes: Routes = [
 {path:"policyForm",component:PolicyFormComponent},
 {path:"TransactionForm",component:TransactionPageComponent},
 {path:"MyPolicy",component:DetailPageComponent},
+{path:"LoanDetail",component:ApplyFormComponent},
+{path:'MyLoan',component:ApplyPageComponent},
 // Admin page routeLink 
 {path:"dashboard",component:DashboardPageComponent,canActivate:[adminGuard]},
 {path:"Policies",component:PoliciesPageComponent,canActivate:[adminGuard]},
 {path:"PoliciesForm",component:PoliciesFormComponent,canActivate:[adminGuard]},
 {path:"User",component:UserPageComponent,canActivate:[adminGuard]},
-{path:"UnactiveUser",component:UnActivePageComponent,canActivate:[adminGuard]},
+
 {path:"Admin",component:AdminPageComponent,canActivate:[adminGuard]},
 {path:"AddAdmin",component:AdminFormComponent,canActivate:[adminGuard]},
 {path:"LoanAmount",component:LoanTableComponent,canActivate:[adminGuard]},
 {path:"AddLoanAmount",component:LoanFormComponent,canActivate:[adminGuard]},
+{path:"InsuranceList",component:InsuranceListComponent,canActivate:[adminGuard]},
+{path:"LoanList",component:LoanListComponent,canActivate:[adminGuard]},
 ];
 
 @NgModule({

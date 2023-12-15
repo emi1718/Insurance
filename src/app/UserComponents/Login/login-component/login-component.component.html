@@ -18,20 +18,29 @@
                         <div class="row g-3">
                             <div class="col-sm-6">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control" name="name" id="gname" [(ngModel)]="LoginService.loginData.Name" required>
+                                    <input type="text" class="form-control" name="name" id="gname" [(ngModel)]="LoginService.loginData.Name" #name="ngModel" required>
                                     <label for="gname">Your Email</label>
                                 </div>
-                            </div>
-                            
-                            <div class="col-sm-6">
-                                <div class="form-floating">
-                                    <input type="password" class="form-control" name="password" id="gmail" [(ngModel)]="LoginService.loginData.Password" required>
-                                    <label for="gmail">Your Password</label>
+                                <div *ngIf="name.invalid && (name.dirty || name.touched)" class="text-danger">
+                                    <div>Name is required.</div>
                                 </div>
                             </div>
-                           
+                    
+                            <div class="col-sm-6">
+                                <div class="form-floating">
+                                    <input type="password" class="form-control" name="password" id="gmail" [(ngModel)]="LoginService.loginData.Password" #password="ngModel" required>
+                                    <label for="gmail">Your Password</label>
+                                </div>
+                                <div *ngIf="password.invalid && (password.dirty || password.touched)" class="text-danger">
+                                    <div >Password is required.</div>
+                                </div>
+                            </div>
+                    
                             <div class="col-12">
-                                <button class="btn btn-primary py-3 px-5" type="submit">Login</button>
+                                <button class="btn btn-primary py-3 px-5" type="submit" [disabled]="MyForm.invalid">Login</button>
+                                <div *ngIf="MyForm.invalid && (MyForm.dirty || MyForm.touched)" class="text-danger">
+                                    <div >All fields are required.</div>
+                                </div>
                             </div>
                             <br><br>
                     
@@ -40,6 +49,7 @@
                             </div>
                         </div>
                     </form>
+                    
                     
                 </div>
             </div>

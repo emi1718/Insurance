@@ -1,11 +1,13 @@
 import { LoanAmount } from "./loan-amount.Model";
 
 export class LoanFacilities {
-    loanId: number;
-    status?: string;
-    amountId?: number; // Assuming this corresponds to the AmountId property in C# class
-    loanAmount?: LoanAmount; // Assuming LoanAmount is a related entity
-    loanAmountString?: string; // NotMapped property
-    premiumAmount?: string; 
+    loanId: number=0;
+    loanType?: string | null;
+    holderName?: string | null;
+    holderEmail?: string | null;
+    amountPremium:string | null;
 
+    status?: string | null;
+    amountId?: number | null;
+    amountTable?: LoanAmount | null;
 }

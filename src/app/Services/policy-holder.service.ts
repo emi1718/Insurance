@@ -16,7 +16,7 @@ export class PolicyHolderService {
 
   getEmail(data: string): Observable<PolicyHolder[]> {
 
-    return this.http.get<PolicyHolder[]>(`${this.PolicyHolderUrl}/${data}`)
+    return this.http.get<PolicyHolder[]>(`https://localhost:7297/api/PolicyHolders/email/${data}`)
 
   }
 

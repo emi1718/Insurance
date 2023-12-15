@@ -41,8 +41,7 @@ import { DashboardTableComponent } from './AdminComponents/DashBoard/dashboard-t
 import { PoliciesFormComponent } from './AdminComponents/Policies/policies-form/policies-form.component';
 import { UserPageComponent } from './AdminComponents/User/user-page/user-page.component';
 import { UserTableComponent } from './AdminComponents/User/user-table/user-table.component';
-import { UnActiveUserComponent } from './AdminComponents/User/un-active-user/un-active-user.component';
-import { UnActivePageComponent } from './AdminComponents/User/un-active-page/un-active-page.component';
+
 import { FormsModule } from '@angular/forms';
 import { AdminPageComponent } from './AdminComponents/Admin/admin-page/admin-page.component';
 import { AdminTableComponent } from './AdminComponents/Admin/admin-table/admin-table.component';
@@ -60,6 +59,9 @@ import { DetailComponentComponent } from './UserComponents/PolicyDetail/detail-c
 import { LoanTableComponent } from './AdminComponents/loanAmount/loan-table/loan-table.component';
 import { LoanFormComponent } from './AdminComponents/loanAmount/loan-form/loan-form.component';
 import { ApplyPageComponent } from './UserComponents/ApplyLoan/apply-page/apply-page.component';
+import { ApplyFormComponent } from './UserComponents/ApplyLoan/apply-form/apply-form.component';
+import { InsuranceListComponent } from './AdminComponents/Insurance/insurance-list/insurance-list.component';
+import { LoanListComponent } from './AdminComponents/Loan/loan-list/loan-list.component';
 
 
 
@@ -110,8 +112,7 @@ import { ApplyPageComponent } from './UserComponents/ApplyLoan/apply-page/apply-
     UserPageComponent,
     UserTableComponent,
 
-    UnActiveUserComponent,
-     UnActivePageComponent,
+
    
      AdminPageComponent,
      AdminTableComponent,
@@ -128,8 +129,11 @@ import { ApplyPageComponent } from './UserComponents/ApplyLoan/apply-page/apply-
      LoanTableComponent,
      LoanFormComponent,
      ApplyPageComponent,
-    
+     ApplyFormComponent,
+     InsuranceListComponent,
+     LoanListComponent,
 
+ 
 
 
 

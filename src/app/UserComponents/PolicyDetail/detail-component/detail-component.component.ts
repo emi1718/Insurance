@@ -19,7 +19,7 @@ export class DetailComponentComponent implements OnInit {
       // Check if 'res' is an object
       if (typeof res === 'object' && !Array.isArray(res)) {
         
-        this.PolicyHolder.PolicyHolderList = [res]; // Wrap the object in an array or handle it differently based on your requirements
+        this.PolicyHolder.PolicyHolderList = res; // Wrap the object in an array or handle it differently based on your requirements
       } else if (Array.isArray(res)) {
         this.PolicyHolder.PolicyHolderList = res;
       } else {
