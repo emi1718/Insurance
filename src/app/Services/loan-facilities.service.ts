@@ -38,9 +38,9 @@ export class LoanFacilitiesService {
   }
 
   // Edit Admin
-  Edit() {
+  Edit(data:LoanFacilities) {
 
-    return this.http.put(`${this.LoanUrl}/${this.LoanData.loanId}`, this.LoanData)
+    return this.http.put(`${this.LoanUrl}/${data.loanId}`, data)
   }
 
   //Delete Admin

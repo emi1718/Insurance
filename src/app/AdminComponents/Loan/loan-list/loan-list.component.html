@@ -24,8 +24,9 @@
                                         <th>Name</th>
                                         <th>Email</th>
                                         <th>Amount</th>
+                                        <th>Premium Amount</th>
                                         <th>status</th>
-
+                                         <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -37,6 +38,16 @@
                                         <td>{{items.loanType}}</td>
                                         <td>{{items.amountPremium}}</td>
                                         <td>{{items.status}}</td>
+
+                                        <td>
+                                            <ng-container *ngIf="items.status === 'Pending'; else cancelBlock">
+                                              <button (click)="activateItem(items)">Active</button>
+                                            </ng-container>
+                                            <ng-template #cancelBlock>
+                                              <button (click)="cancelItem(items)">Cancel</button>
+                                            </ng-template>
+                                          </td>
+                                          
                                     </tr>
                                 </tbody>
                             </table>

@@ -14,40 +14,35 @@
             </div>
             <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
                 <div class="bg-white rounded p-5">
-                    <form>
+                    <form #myForm  (ngSubmit)="Send(contactService.LoanData)">
                         <div class="row g-3">
                             <div class="col-sm-6">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control" id="gname" placeholder="Gurdian Name">
+                                    <input type="text" class="form-control" placeholder="Gurdian Name" name="name" #name="ngModel" [(ngModel)]="contactService.LoanData.name">
                                     <label for="gname">Your Name</label>
                                 </div>
                             </div>
                             <div class="col-sm-6">
                                 <div class="form-floating">
-                                    <input type="email" class="form-control" id="gmail" placeholder="Gurdian Email">
+                                    <input type="email" class="form-control"  placeholder="Gurdian Email"  name="email" #email="ngModel" [(ngModel)]="contactService.LoanData.email">
                                     <label for="gmail">Your Email</label>
                                 </div>
                             </div>
                             <div class="col-sm-6">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control" id="cname" placeholder="Child Name">
+                                    <input type="text" class="form-control"  placeholder="Child Name" name="phone" #phone="ngModel" [(ngModel)]="contactService.LoanData.phone">
                                     <label for="cname">Your Mobile</label>
                                 </div>
                             </div>
-                            <div class="col-sm-6">
-                                <div class="form-floating">
-                                    <input type="text" class="form-control" id="cage" placeholder="Child Age">
-                                    <label for="cage">Service Type</label>
-                                </div>
-                            </div>
+                           
                             <div class="col-12">
                                 <div class="form-floating">
-                                    <textarea class="form-control" placeholder="Leave a message here" id="message" style="height: 80px"></textarea>
+                                    <textarea class="form-control" placeholder="Leave a message here" id="message" style="height: 80px" name="massage" #massage="ngModel" [(ngModel)]="contactService.LoanData.massage"></textarea>
                                     <label for="message">Message</label>
                                 </div>
                             </div>
                             <div class="col-12">
-                                <button class="btn btn-primary py-3 px-5" type="submit">Get Appointment</button>
+                                <button class="btn btn-primary py-3 px-5" type="submit">Send</button>
                             </div>
                         </div>
                     </form>

@@ -20,30 +20,25 @@
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
-                            <th>Id</th>
+                            <th>ID</th>
                             <th>Name</th>
                             <th>Email</th>
                             <th>Phone</th>
-                             <th>policy Name</th>
-                             <th>status</th>
-                        
+                            <th>Card Number</th>
+                            <th>CVV</th>
+                            <th>PIN</th>
                         </tr>
                     </thead>
                     <tbody>
                         
-                         <tr *ngFor="let items of Insurance.PolicyHolderList ">
-                            <td>{{items.policyHolderID}}</td>
+                         <tr *ngFor="let items of transaction.TransactionList">
+                            <td>{{items.transactionID}}</td>
                             <td>{{items.policyHolderName}}</td>
                             <td>{{items.policyHolderEmail}}</td>
                             <td>{{items.policyHolderPhone}}</td>
-                            <td>{{items.policyName}}</td>
-                        
-                        
-                            <td>
-                                <button *ngIf="items.status === 0" (click)="activateItem(items)" class="btn btn-primary">Activate</button>
-                                <button *ngIf="items.status === 1" (click)="deactivateItem(items)" class="btn btn-success">Deactivate</button>
-                              </td>
-                              
+                            <td>{{items.cardNumber}}</td>
+                            <td>{{items.cvv}}</td>
+                            <td>{{items.pin}}</td>
                        
                         </tr> 
                    

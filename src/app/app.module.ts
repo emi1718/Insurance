@@ -62,6 +62,8 @@ import { ApplyPageComponent } from './UserComponents/ApplyLoan/apply-page/apply-
 import { ApplyFormComponent } from './UserComponents/ApplyLoan/apply-form/apply-form.component';
 import { InsuranceListComponent } from './AdminComponents/Insurance/insurance-list/insurance-list.component';
 import { LoanListComponent } from './AdminComponents/Loan/loan-list/loan-list.component';
+import { TransactionListComponent } from './AdminComponents/transaction/transaction-list/transaction-list.component';
+import { ContactComponent } from './AdminComponents/contact/contact.component';
 
 
 
@@ -132,6 +134,8 @@ import { LoanListComponent } from './AdminComponents/Loan/loan-list/loan-list.co
      ApplyFormComponent,
      InsuranceListComponent,
      LoanListComponent,
+     TransactionListComponent,
+     ContactComponent,
 
  
 

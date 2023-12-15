@@ -22,8 +22,8 @@ export class TransactionService {
   }
 
   //Create Admin 
-  Create() {
-    return this.http.post(this.TransactionUrl, this.TransactionData);
+  Create(mydata:Transaction) {
+    return this.http.post(this.TransactionUrl, mydata);
   }
 
   // Edit Admin

@@ -24,31 +24,20 @@
                             <th>Name</th>
                             <th>Email</th>
                             <th>Phone</th>
-                             <th>policy Name</th>
-                             <th>status</th>
+                             <th>Massage</th>
+                             
                         
                         </tr>
                     </thead>
                     <tbody>
                         
-                         <tr *ngFor="let items of Insurance.PolicyHolderList ">
-                            <td>{{items.policyHolderID}}</td>
-                            <td>{{items.policyHolderName}}</td>
-                            <td>{{items.policyHolderEmail}}</td>
-                            <td>{{items.policyHolderPhone}}</td>
-                            <td>{{items.policyName}}</td>
-                        
-                        
-                            <td>
-                                <button *ngIf="items.status === 0" (click)="activateItem(items)" class="btn btn-primary">Activate</button>
-                                <button *ngIf="items.status === 1" (click)="deactivateItem(items)" class="btn btn-success">Deactivate</button>
-                              </td>
-                              
-                       
+                         <tr *ngFor="let items of contact.LoanList ">
+                            <td>{{items.contactId}}</td>
+                            <td>{{items.name}}</td>
+                            <td>{{items.email}}</td>
+                            <td>{{items.phone}}</td>
+                            <td>{{items.massage}}</td>                     
                         </tr> 
-                   
-                
-
                     </tbody>
                 </table>
 

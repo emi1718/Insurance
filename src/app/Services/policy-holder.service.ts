@@ -26,14 +26,14 @@ export class PolicyHolderService {
   }
 
   //Create Admin 
-  Create() {
-    return this.http.post(this.PolicyHolderUrl, this.PolicyHolderData);
+  Create(data:PolicyHolder) {
+    return this.http.post(this.PolicyHolderUrl, data);
   }
 
   // Edit Admin
-  Edit() {
+  Edit(data:PolicyHolder) {
 
-    return this.http.put(`${this.PolicyHolderUrl}/${this.PolicyHolderData.policyHolderID}`, this.PolicyHolderData)
+    return this.http.put(`${this.PolicyHolderUrl}/${data.policyHolderID}`, data)
   }
 
   //Delete Admin

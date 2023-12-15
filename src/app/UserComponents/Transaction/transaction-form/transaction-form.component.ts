@@ -16,20 +16,22 @@ export class TransactionFormComponent {
 
   UserName = localStorage.getItem('userName');
   Email = localStorage.getItem('userEmail');
-
+  mydata:Transaction=new Transaction()
   AddTransaction(data: Transaction) {
   
     
 
-    this.policyHolder.Create().subscribe(res => {
-      console.log(res);
-    })
 
-    this.transaction.Create().subscribe(res => {
+
+this.mydata.cardNumber=data.cardNumber
+this.mydata.cvv=data.cvv;
+this.mydata.policyHolderName=this.UserName;
+this.mydata.policyHolderEmail=this.Email;
+this.mydata.expDate=data.expDate;
+this.mydata.pin=data.pin
+
+    this.transaction.Create(this.mydata).subscribe(res => {
       if (res) {
-        this.transaction.TransactionData.policyHolderName=this.UserName;
-        this.transaction.TransactionData.policyHolderEmail=this.Email
-        this.transaction.TransactionData = data
         this.router.navigate(["/MyPolicy"]);
         console.log(res)
       }})

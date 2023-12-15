@@ -26,6 +26,8 @@ import { ApplyFormComponent } from './UserComponents/ApplyLoan/apply-form/apply-
 import { ApplyPageComponent } from './UserComponents/ApplyLoan/apply-page/apply-page.component';
 import { InsuranceListComponent } from './AdminComponents/Insurance/insurance-list/insurance-list.component';
 import { LoanListComponent } from './AdminComponents/Loan/loan-list/loan-list.component';
+import { TransactionListComponent } from './AdminComponents/transaction/transaction-list/transaction-list.component';
+import { ContactComponent } from './AdminComponents/contact/contact.component';
 
 
 const routes: Routes = [
@@ -53,6 +55,8 @@ const routes: Routes = [
 {path:"AddLoanAmount",component:LoanFormComponent,canActivate:[adminGuard]},
 {path:"InsuranceList",component:InsuranceListComponent,canActivate:[adminGuard]},
 {path:"LoanList",component:LoanListComponent,canActivate:[adminGuard]},
+{path:"TList",component:TransactionListComponent,canActivate:[adminGuard]},
+{path:"contactList",component:ContactComponent,canActivate:[adminGuard]},
 ];
 
 @NgModule({
