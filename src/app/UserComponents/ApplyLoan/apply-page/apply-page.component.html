@@ -9,6 +9,8 @@
                 <th>Name</th>
                 <th>Amount</th>
                 <th>Monthy Payment</th>
+                <th>Interest</th>
+                <th>Total</th>
                 <th>Status</th>
               
              </thead>
@@ -18,7 +20,8 @@
                  <td>{{item.holderName}}</td>
                  <td>{{item.loanType}}</td>
                  <td>{{item.amountPremium}}</td>
-
+                 <td>{{item.interest}}</td>
+                    <td>{{item.loanType + item.interest}}</td>
                  <td>{{item.status}}</td>
                  
       

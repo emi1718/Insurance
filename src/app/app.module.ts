@@ -37,7 +37,7 @@ import { SideBarComponent } from './AdminComponents/Components/side-bar/side-bar
 import { FooterComponent } from './AdminComponents/Components/footer/footer.component';
 import { PoliciesPageComponent } from './AdminComponents/Policies/policies-page/policies-page.component';
 import { PoliciesTableComponent } from './AdminComponents/Policies/policies-table/policies-table.component';
-import { DashboardTableComponent } from './AdminComponents/DashBoard/dashboard-table/dashboard-table.component';
+
 import { PoliciesFormComponent } from './AdminComponents/Policies/policies-form/policies-form.component';
 import { UserPageComponent } from './AdminComponents/User/user-page/user-page.component';
 import { UserTableComponent } from './AdminComponents/User/user-table/user-table.component';
@@ -109,7 +109,7 @@ import { ContactComponent } from './AdminComponents/contact/contact.component';
     FooterComponent,
     PoliciesPageComponent,
     PoliciesTableComponent,
-    DashboardTableComponent,
+    
     PoliciesFormComponent,
     UserPageComponent,
     UserTableComponent,

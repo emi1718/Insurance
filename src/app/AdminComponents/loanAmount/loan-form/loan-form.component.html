@@ -11,9 +11,9 @@
                     <div class="mb-3">
                         <input type="hidden" class="form-control" id="Id" name="Id" #Id="ngModel"
                             [(ngModel)]="this.loanAmount.LoanData.amountId">
-                    </div>
+                      </div>
                     <div class="mb-3">
-                        <label for="name" class="form-label">Name</label>
+                        <label for="name" class="form-label">Amount</label>
                         <input type="text" class="form-control" id="name" name="amount" #amount="ngModel"
                             [(ngModel)]="this.loanAmount.LoanData.amountValue" required>
                         <div *ngIf="amount.invalid && (amount.dirty || amount.touched)" class="text-danger">
@@ -21,7 +21,7 @@
                         </div>
                     </div>
                     <div class="mb-3">
-                        <label for="name" class="form-label">Name</label>
+                        <label for="name" class="form-label">Monthly Amount</label>
                         <input type="text" class="form-control" id="name" name="PA" #PA="ngModel"
                             [(ngModel)]="this.loanAmount.LoanData.amountPremium" required>
                         <div *ngIf="PA.invalid && (PA.dirty || PA.touched)" class="text-danger">
@@ -29,11 +29,20 @@
                         </div>
                     </div>
 
+
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Interest</label>
+                        <input type="text" class="form-control" id="name" name="interest" #interest="ngModel"
+                            [(ngModel)]="this.loanAmount.LoanData.interest" required>
+                        <div *ngIf="PA.invalid && (interest.dirty || interest.touched)" class="text-danger">
+                            Inserest is Required
+                        </div>
+                    </div>
+
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
 
-                <a href="/AddLoanAmount" class="btn btn-danger">Add More Amounts</a>
-
+                
 
 
 
